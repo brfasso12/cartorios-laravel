@@ -5,7 +5,10 @@
     @method('PUT')
 
     <input type="text" name="nome" value="{{ $cartorio->nome }}">
-    <input type="text" name="cnpj" value="{{ $cartorio->cnpj }}">
+
+    <!-- CNPJ -->
+    <input type="text" name="cnpj" id="cnpj" value="{{ $cartorio->cnpj }}">
+
     <input type="text" name="tabeliao" value="{{ $cartorio->tabeliao }}">
 
     <select name="municipio_id">
@@ -25,3 +28,18 @@
 
     <button type="submit">Atualizar</button>
 </form>
+
+<!-- IMASK -->
+<script src="https://unpkg.com/imask"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById('cnpj');
+
+    if (!input) return;
+
+    IMask(input, {
+        mask: '00.000.000/0000-00'
+    });
+});
+
