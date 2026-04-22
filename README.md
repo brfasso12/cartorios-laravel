@@ -137,4 +137,4 @@ Formatação do CNPJ na listagem
 Rotas REST padrão do Laravel
 🎨 Interface
 
-A interface foi construída utilizando Blade Templates do Laravel, com foco em simplicidade, funcionalidade e usabilidade.
+A interface foi construída utilizando Blade Templates do Laravel, com foco em simplicidade, funcionalidade e usabilidade..
