@@ -7,12 +7,21 @@ use App\Models\Municipio;
 
 class MunicipioSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
-        Municipio::insert([
-            ['nome' => 'Brasília'],
-            ['nome' => 'São Paulo'],
-            ['nome' => 'Rio de Janeiro']
-        ]);
+        $municipios = [
+            'Brasília',
+            'Goiânia',
+            'Vitória',
+            'Campinas',
+            'Manaus',
+            'Rio de Janeiro',
+        ];
+
+        foreach ($municipios as $nome) {
+            Municipio::create([
+                'nome' => $nome
+            ]);
+        }
     }
 }

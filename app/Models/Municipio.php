@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Municipio extends Model
 {
-    protected $fillable = ['nome'];
+    protected $fillable = [
+        'nome'
+    ];
 
-public function cartorios()
-{
-    return $this->hasMany(Cartorio::class);
-}
+    public function cartorios()
+    {
+        return $this->hasMany(Cartorio::class);
+    }
 }

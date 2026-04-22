@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Cartorio extends Model
 {
     protected $fillable = [
-    'nome',
-    'cnpj',
-    'tabeliao',
-    'ativo',
-    'municipio_id'
-];
+        'nome',
+        'cnpj',
+        'tabeliao',
+        'ativo',
+        'municipio_id'
+    ];
 
-public function municipio()
-{
-    return $this->belongsTo(Municipio::class);
-}
+    public function municipio()
+    {
+        return $this->belongsTo(Municipio::class);
+    }
 }
