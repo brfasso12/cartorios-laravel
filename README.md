@@ -34,7 +34,7 @@ composer install
 
 Copie o arquivo de exemplo:
 
-cp .env.example .env
+copie .env.example .env
 
 Depois abra o arquivo .env e configure o banco de dados:
 
@@ -45,81 +45,91 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 (modifique o database, colocando laravel)
+
 4. Criar chave da aplicação
 php artisan key:generate
-5. Iniciar o XAMPP
+
+6. Iniciar o XAMPP
 Abra o XAMPP
 Ative:
 ✔ Apache
 ✔ MySQL
-6. Criar o banco de dados
+
+8. Criar o banco de dados
 
 Acesse:
 
 http://localhost/phpmyadmin
 
 Crie um banco chamado:
-
 cartorios
+
 7. Rodar as migrations (criação das tabelas)
 php artisan migrate
-8. (Opcional) Popular banco com dados iniciais
 
-Se existir seeders:
+8. Rodar as seeders
 
 php artisan db:seed
-9. Iniciar o servidor Laravel
+
+9. Confira se está usando a pasta do projeto e inicie o servidor Laravel
 php artisan serve
 
 Acesse no navegador:
 
 http://127.0.0.1:8000
-⚠️ RESUMO SIMPLES
+
+### RESUMO SIMPLES
 
 ✔ XAMPP roda o servidor e banco
 ✔ phpMyAdmin gerencia o MySQL
 ✔ Laravel roda via artisan serve
 ✔ Composer instala dependências
 
-📌 Declarações e resumo do projeto
+### Declarações e resumo do projeto
 
 Este projeto consiste em um sistema de cadastro de cartórios desenvolvido em PHP com o framework Laravel, seguindo o padrão MVC e boas práticas de desenvolvimento web.
 
-🧱 Estrutura do projeto
+### Estrutura do projeto
 
 O projeto segue o padrão MVC (Model-View-Controller):
 
 Models: comunicação com o banco de dados (Cartorio e Municipio)
 Controllers: lógica das operações CRUD
 Views (Blade): interface do usuário
-🗄️ Banco de dados utilizado
+
+### Banco de dados utilizado
 
 O projeto utiliza MySQL, gerenciado através do phpMyAdmin (incluso no XAMPP).
 
-📊 Tabelas principais
-cartorios
+### Tabelas principais
+
+- cartorios
 id
 nome (string)
 cnpj (string)
 tabeliao (string)
 municipio_id (foreign key)
 ativo (boolean)
-municipios
+- municipios
 id
 nome
 created_at
 updated_at
-🔗 Relacionamentos
+
+Relacionamentos
 Um cartório pertence a um município (belongsTo)
 Um município pode ter vários cartórios (hasMany)
-⚙️ Funcionalidades (CRUD completo)
+
+### Funcionalidades (CRUD completo)
 
 ✔ Listagem de cartórios
 ✔ Cadastro de cartórios
 ✔ Edição de cartórios
 ✔ Exclusão de cartórios
+✔ Checkbox para Cartórios ativos ou inativos
 
-⭐ Extras implementados
+### Extras implementados
+
 Seleção de município via banco de dados (select dinâmico)
 Checkbox para status ativo/inativo
 Máscara de CNPJ no frontend
