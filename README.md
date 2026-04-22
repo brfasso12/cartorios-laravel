@@ -1,105 +1,130 @@
-# cartorios-laravel
+📌 Sistema de Cadastro de Cartórios (CRUD)
 
-# 📌 Sistema de Cadastro de Cartórios (CRUD)
 Criado por: João Victor Silva Valente Lima
 
-### ferramentas utilizadas no projeto
+### Ferramentas utilizadas no projeto
+
 PHP 8.2.12
 Laravel 12.56.0
 MySQL
-XAMPP (ambiente local com Apache e MySQL)
-phpMyAdmin (gerenciamento do banco de dados)
-VSCode (editor de código)
-Composer (gerenciamento de dependências)
+XAMPP (Apache + MySQL)
+phpMyAdmin
+VSCode
+Composer
 
-### Requisitos para a instalação
-- PHP 8.2.12
-- Composer 2.9.7
-- Laravel Framework 12.56.0
-- XAMPP 3.3.0 (Clicar em Apache + MySQL)
-- MySQL (via phpMyAdmin)
+### Requisitos para instalação
 
-### Passos para configurar o banco:
-1. Inicie o XAMPP (Apache e MySQL)
-2. Acesse o phpMyAdmin em: http://localhost/phpmyadmin
-3. Crie um banco de dados chamado: cartorios
-5. Configure o arquivo ".env" com:
+Antes de rodar o projeto, certifique-se de ter instalado:
+PHP 8.2.12 ou superior
+Composer 2.9.7 ou superior
+XAMPP 3.3.0 (Apache + MySQL ativos)
+MySQL (via phpMyAdmin)
 
+### Como fazer o projeto rodar
+1. Clonar ou baixar o projeto
+
+git clone https://github.com/brfasso12/cartorios-laravel.git
+
+Depois entre na pasta:
+
+cd cartorios-laravel
+2. Instalar dependências do Laravel
+composer install
+3. Configurar o ambiente (.env)
+
+Copie o arquivo de exemplo:
+
+cp .env.example .env
+
+Depois abra o arquivo .env e configure o banco de dados:
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
-(substituindo o database existente por "laravel")
+(modifique o database, colocando laravel)
+4. Criar chave da aplicação
+php artisan key:generate
+5. Iniciar o XAMPP
+Abra o XAMPP
+Ative:
+✔ Apache
+✔ MySQL
+6. Criar o banco de dados
 
-### RESUMO SIMPLES
-✔ você usa XAMPP para rodar o servidor
-✔ usa phpMyAdmin para ver/criar tabelas
-✔ o projeto usa MySQL por baixo
-#### Declarações e resumo do projeto
+Acesse:
+
+http://localhost/phpmyadmin
+
+Crie um banco chamado:
+
+cartorios
+7. Rodar as migrations (criação das tabelas)
+php artisan migrate
+8. (Opcional) Popular banco com dados iniciais
+
+Se existir seeders:
+
+php artisan db:seed
+9. Iniciar o servidor Laravel
+php artisan serve
+
+Acesse no navegador:
+
+http://127.0.0.1:8000
+⚠️ RESUMO SIMPLES
+
+✔ XAMPP roda o servidor e banco
+✔ phpMyAdmin gerencia o MySQL
+✔ Laravel roda via artisan serve
+✔ Composer instala dependências
+
+📌 Declarações e resumo do projeto
 
 Este projeto consiste em um sistema de cadastro de cartórios desenvolvido em PHP com o framework Laravel, seguindo o padrão MVC e boas práticas de desenvolvimento web.
-## Estrutura do projeto
 
-O projeto segue o padrão **MVC (Model-View-Controller)**:
+🧱 Estrutura do projeto
 
-- **Models:** comunicação com o banco de dados (Cartorio e Municipio)
-- **Controllers:** lógica das operações CRUD
-- **Views (Blade):** interface do usuário
+O projeto segue o padrão MVC (Model-View-Controller):
 
----
-
-## Banco de dados ultilizado
+Models: comunicação com o banco de dados (Cartorio e Municipio)
+Controllers: lógica das operações CRUD
+Views (Blade): interface do usuário
+🗄️ Banco de dados utilizado
 
 O projeto utiliza MySQL, gerenciado através do phpMyAdmin (incluso no XAMPP).
 
-### Tabelas importantes:
+📊 Tabelas principais
+cartorios
+id
+nome (string)
+cnpj (string)
+tabeliao (string)
+municipio_id (foreign key)
+ativo (boolean)
+municipios
+id
+nome
+created_at
+updated_at
+🔗 Relacionamentos
+Um cartório pertence a um município (belongsTo)
+Um município pode ter vários cartórios (hasMany)
+⚙️ Funcionalidades (CRUD completo)
 
-#### cartorios
-- id
-- nome (string)
-- cnpj (string)
-- tabeliao (string)
-- municipio_id (foreign key)
-- ativo (boolean)
+✔ Listagem de cartórios
+✔ Cadastro de cartórios
+✔ Edição de cartórios
+✔ Exclusão de cartórios
 
-#### municipios
-- id
-- nome
-- 
+⭐ Extras implementados
+Seleção de município via banco de dados (select dinâmico)
+Checkbox para status ativo/inativo
+Máscara de CNPJ no frontend
+Formatação do CNPJ na listagem
+Rotas REST padrão do Laravel
+🎨 Interface
 
----
-
-## 🔗 Relacionamentos
-
-- Um cartório pertence a um município (`belongsTo`)
-- Um município pode ter vários cartórios (`hasMany`)
-
----
-
-## ⚙️ Funcionalidades (CRUD completo)
-
-✔ Listagem de cartórios  
-✔ Cadastro de cartórios  
-✔ Edição de cartórios  
-✔ Exclusão de cartórios  
-
-### Extras implementados:
-
-- Seleção de município via banco de dados (select dinâmico)  
-- Checkbox para status ativo/inativo  
-- Máscara de CNPJ no formulário (frontend)  
-- Formatação do CNPJ na listagem  
-- Rotas no padrão REST do Laravel  
-
----
-
-## 🎨 Interface
-
-A interface foi construída utilizando Blade Templates do Laravel, com formulários simples e funcionais para cadastro e edição dos dados.
-
----
-
-## ▶️ Como executar o projeto
-
-### 1. Clonar o repositório
-```bash
-git clone <URL_DO_REPOSITORIO>
+A interface foi construída utilizando Blade Templates do Laravel, com foco em simplicidade, funcionalidade e usabilidade.
