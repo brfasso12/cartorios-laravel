@@ -28,10 +28,11 @@ git clone https://github.com/brfasso12/cartorios-laravel.git
 Depois entre na pasta:
 
 cd cartorios-laravel
+
 2. Instalar dependências do Laravel
 composer install
-3. Configurar o ambiente (.env)
 
+3. Configurar o ambiente (.env)
 Copie o arquivo de exemplo:
 
 copie .env.example .env
@@ -68,7 +69,6 @@ cartorios
 php artisan migrate
 
 8. Rodar as seeders
-
 php artisan db:seed
 
 9. Confira se está usando a pasta do projeto e inicie o servidor Laravel
