@@ -49,7 +49,6 @@ DB_PORT=3306
 DB_DATABASE=cartorios
 DB_USERNAME=root
 DB_PASSWORD=
-(modifique o database, colocando cartorios)
 
 4. Criar chave da aplicação
 php artisan key:generate
