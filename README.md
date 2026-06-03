@@ -29,10 +29,13 @@ Depois entre na pasta:
 
 cd cartorios-laravel
 
+vá no arquivo C:\xampp\php\php.ini e procure por ;extension=zip, após isso, retire o ";" do extension=zip
+
 2. Instalar dependências do Laravel
+Instale o composer pelo navegador, após isso, no terminal do Vscode, execute o
 composer install
 
-3. Configurar o ambiente (.env)
+4. Configurar o ambiente (.env)
 Copie o arquivo de exemplo:
 
 copie .env.example .env
@@ -42,10 +45,10 @@ Depois abra o arquivo .env e configure o banco de dados:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel
+DB_DATABASE=cartorios
 DB_USERNAME=root
 DB_PASSWORD=
-(modifique o database, colocando laravel)
+(modifique o database, colocando cartorios)
 
 4. Criar chave da aplicação
 php artisan key:generate
@@ -63,7 +66,7 @@ Acesse:
 http://localhost/phpmyadmin
 
 Crie um banco chamado:
-cartorios
+projeto
 
 7. Rodar as migrations (criação das tabelas)
 php artisan migrate
