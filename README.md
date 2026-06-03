@@ -38,9 +38,10 @@ composer install
 4. Configurar o ambiente (.env)
 Copie o arquivo de exemplo:
 
-copie .env.example .env
+copie .env.exemplo
 
-Depois abra o arquivo .env e configure o banco de dados:
+Depois crie o arquivo .env e cole oque estava no .env.exemplo
+Após isso, substitua o campo do banco de dados(Localizado entre a linha 23, e a linha 28) por isso:
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
